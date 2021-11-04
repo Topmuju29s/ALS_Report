@@ -1,0 +1,2299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="masterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.MSreplication_options' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MSreplication_options">
+          <Key>
+            <PropertyRef Name="optname" />
+            <PropertyRef Name="value" />
+            <PropertyRef Name="major_version" />
+            <PropertyRef Name="minor_version" />
+            <PropertyRef Name="revision" />
+            <PropertyRef Name="install_failures" />
+          </Key>
+          <Property Name="optname" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="value" Type="bit" Nullable="false" />
+          <Property Name="major_version" Type="int" Nullable="false" />
+          <Property Name="minor_version" Type="int" Nullable="false" />
+          <Property Name="revision" Type="int" Nullable="false" />
+          <Property Name="install_failures" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_db' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="spt_fallback_db">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="dbid" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="version" />
+          </Key>
+          <Property Name="xserver_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+          <Property Name="xfallback_dbid" Type="smallint" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="dbid" Type="smallint" Nullable="false" />
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="version" Type="smallint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_dev' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="spt_fallback_dev">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="low" />
+            <PropertyRef Name="high" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="phyname" />
+          </Key>
+          <Property Name="xserver_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+          <Property Name="xfallback_low" Type="int" />
+          <Property Name="xfallback_drive" Type="char" MaxLength="2" />
+          <Property Name="low" Type="int" Nullable="false" />
+          <Property Name="high" Type="int" Nullable="false" />
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="phyname" Type="varchar" MaxLength="127" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_fallback_usg' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="spt_fallback_usg">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="dbid" />
+            <PropertyRef Name="segmap" />
+            <PropertyRef Name="lstart" />
+            <PropertyRef Name="sizepg" />
+            <PropertyRef Name="vstart" />
+          </Key>
+          <Property Name="xserver_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="xdttm_ins" Type="datetime" Nullable="false" />
+          <Property Name="xdttm_last_ins_upd" Type="datetime" Nullable="false" />
+          <Property Name="xfallback_vstart" Type="int" />
+          <Property Name="dbid" Type="smallint" Nullable="false" />
+          <Property Name="segmap" Type="int" Nullable="false" />
+          <Property Name="lstart" Type="int" Nullable="false" />
+          <Property Name="sizepg" Type="int" Nullable="false" />
+          <Property Name="vstart" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_monitor' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="spt_monitor">
+          <Key>
+            <PropertyRef Name="lastrun" />
+            <PropertyRef Name="cpu_busy" />
+            <PropertyRef Name="io_busy" />
+            <PropertyRef Name="idle" />
+            <PropertyRef Name="pack_received" />
+            <PropertyRef Name="pack_sent" />
+            <PropertyRef Name="connections" />
+            <PropertyRef Name="pack_errors" />
+            <PropertyRef Name="total_read" />
+            <PropertyRef Name="total_write" />
+            <PropertyRef Name="total_errors" />
+          </Key>
+          <Property Name="lastrun" Type="datetime" Nullable="false" />
+          <Property Name="cpu_busy" Type="int" Nullable="false" />
+          <Property Name="io_busy" Type="int" Nullable="false" />
+          <Property Name="idle" Type="int" Nullable="false" />
+          <Property Name="pack_received" Type="int" Nullable="false" />
+          <Property Name="pack_sent" Type="int" Nullable="false" />
+          <Property Name="connections" Type="int" Nullable="false" />
+          <Property Name="pack_errors" Type="int" Nullable="false" />
+          <Property Name="total_read" Type="int" Nullable="false" />
+          <Property Name="total_write" Type="int" Nullable="false" />
+          <Property Name="total_errors" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_M_Credit_Term">
+          <Key>
+            <PropertyRef Name="Credit_Term_ID" />
+          </Key>
+          <Property Name="Credit_Term_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Credit_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Credit_Term_Value" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TB_M_Delivery_Type">
+          <Key>
+            <PropertyRef Name="Delivery_Type_ID" />
+          </Key>
+          <Property Name="Delivery_Type_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Delivery_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Delivery_Type" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_M_STATUS">
+          <Key>
+            <PropertyRef Name="STATUS_ID" />
+          </Key>
+          <Property Name="STATUS_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="STATUS_CODE" Type="nvarchar" MaxLength="50" />
+          <Property Name="STATUS_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="DOCTYPE" Type="nvarchar" MaxLength="50" />
+          <Property Name="DOCTYPE_SUB" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_R_BA">
+          <Key>
+            <PropertyRef Name="BA_ID" />
+          </Key>
+          <Property Name="BA_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Package_ID" Type="uniqueidentifier" />
+          <Property Name="BA_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quote_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_To_Comany" Type="nvarchar" MaxLength="500" />
+          <Property Name="Invoice_To_Person" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Invoice_Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Report_To_Comany" Type="nvarchar" MaxLength="500" />
+          <Property Name="Reports_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Reports_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Delivery_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Delivery_Lab" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_R_CB_BA">
+          <Key>
+            <PropertyRef Name="CB_ID" />
+          </Key>
+          <Property Name="CB_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CB_Package_ID" Type="uniqueidentifier" />
+          <Property Name="CB_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Quote_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_To_Comany" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Invoice_To_Person" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Invoice_Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Report_To_Comany" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Reports_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Reports_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Delivery_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Delivery_Lab" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="CB_CreateDate" Type="datetime" />
+          <Property Name="CB_CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_UpdateDate" Type="datetime" />
+          <Property Name="CB_UpdateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_R_CB_INVOICE">
+          <Key>
+            <PropertyRef Name="CB_Invoice_ID" />
+          </Key>
+          <Property Name="CB_Invoice_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CB_ID" Type="uniqueidentifier" />
+          <Property Name="CB_Invoice_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Bill_To_Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Delivery_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Delivery_To_Person" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Delivery_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Report_To_Comany" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Reports_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Reports_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_Issue_Date" Type="datetime" />
+          <Property Name="CB_Invoice_Date_Override" Type="datetime" />
+          <Property Name="CB_Total_Invoice_Amount_Inc_Vat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreditTerm" Type="nvarchar" MaxLength="10" />
+          <Property Name="Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_R_CB_PACKAGE">
+          <Key>
+            <PropertyRef Name="CB_Package_ID" />
+          </Key>
+          <Property Name="CB_Package_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CB_Package_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Package_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Package_Delivery_Date" Type="datetime" />
+          <Property Name="CB_Package_DESC" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Invoice_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Invoice_To_Person" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_To_Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_To_Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Invoice_Delivery_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_Delivery_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_Delivery_Lab" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Logistics_Delivery_Date" Type="datetime" />
+          <Property Name="CB_Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_R_INVOICE">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+          </Key>
+          <Property Name="Invoice_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BA_ID" Type="uniqueidentifier" />
+          <Property Name="Invoice_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bill_To_Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="Delivery_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Delivery_To_Person" Type="nvarchar" MaxLength="50" />
+          <Property Name="Delivery_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Report_To_Comany" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reports_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Reports_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_Issue_Date" Type="datetime" />
+          <Property Name="Invoice_Date_Override" Type="datetime" />
+          <Property Name="Total_Invoice_Amount_Inc_Vat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreditTerm" Type="nvarchar" MaxLength="10" />
+          <Property Name="Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_R_PACKAGE">
+          <Key>
+            <PropertyRef Name="Package_ID" />
+          </Key>
+          <Property Name="Package_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Package_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Package_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Package_Delivery_Date" Type="datetime" />
+          <Property Name="Package_DESC" Type="nvarchar" MaxLength="500" />
+          <Property Name="Invoice_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Invoice_To_Person" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_To_Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_To_Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="Invoice_Delivery_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_Delivery_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_Delivery_Lab" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logistics_Delivery_Date" Type="datetime" />
+          <Property Name="Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_S_BillingAppointmentReportData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InvoiceId" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliveryType" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliveryType" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliveryLaboratory" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliveryLaboratory" Type="nvarchar(max)" />
+          <Property Name="QuoteCode" Type="nvarchar(max)" />
+          <Property Name="CreditTerm" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliveryClientCode" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToClientCode" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToClientName" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliveryClientName" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToPersonName" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToPersonTelephone" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToPersonMobile" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToPersonName" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToPersonTelephone" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToPersonMobile" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToOffice" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToAddress1" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToAddress2" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToAddress3" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToCity" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToState" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToZip" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliverToLocation" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToOffice" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToAddress1" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToAddress2" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToAddress3" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToCity" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToState" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToZip" Type="nvarchar(max)" />
+          <Property Name="AnalysisReportDeliverToLocation" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliveryNotes" Type="nvarchar(max)" />
+          <Property Name="InvoiceDeliveryProcess" Type="nvarchar(max)" />
+          <Property Name="InvoiceIssuedDate" Type="date" />
+          <Property Name="InvoiceDateOverride" Type="date" />
+          <Property Name="InvoiceNumbersIncludedInSearch" Type="nvarchar(max)" />
+          <Property Name="TotalInvoiceAmountIncludingVat" Type="nvarchar(max)" />
+          <Property Name="ReportToPersonName" Type="nvarchar(max)" />
+          <Property Name="ReportToAddress1" Type="nvarchar(max)" />
+          <Property Name="ReportToAddress2" Type="nvarchar(max)" />
+          <Property Name="ReportToAddress3" Type="nvarchar(max)" />
+          <Property Name="ReportToCity" Type="nvarchar(max)" />
+          <Property Name="ReportToState" Type="nvarchar(max)" />
+          <Property Name="ReportToZip" Type="nvarchar(max)" />
+          <Property Name="ReportToLocation" Type="nvarchar(max)" />
+          <Property Name="BillToClientCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillToClientName" Type="nvarchar(max)" />
+          <Property Name="BillToContactPerson" Type="nvarchar" MaxLength="255" />
+          <Property Name="PaymentDeliveryProcess" Type="nvarchar(max)" />
+          <Property Name="PaymentDeliveryNotes" Type="nvarchar(max)" />
+          <Property Name="ReportLocation" Type="nvarchar(max)" />
+          <Property Name="GenerateBillingAppointmentPerInvoice" Type="nvarchar(max)" />
+          <Property Name="InvoicePaid" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CeateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_S_BillingData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="nchar" MaxLength="10" />
+          <Property Name="Workorder" Type="nchar" MaxLength="10" />
+          <Property Name="Site" Type="nchar" MaxLength="10" />
+          <Property Name="NAVAccountNumber" Type="nchar" MaxLength="10" />
+          <Property Name="Project" Type="nchar" MaxLength="10" />
+          <Property Name="PurchaseOrder" Type="nvarchar(max)" />
+          <Property Name="ReportToContact" Type="nvarchar(max)" />
+          <Property Name="ReportToOffice" Type="nvarchar(max)" />
+          <Property Name="ReportToClient" Type="nvarchar(max)" />
+          <Property Name="InvoiceContact" Type="nvarchar(max)" />
+          <Property Name="Laboratory" Type="nvarchar(max)" />
+          <Property Name="ClientManager" Type="nvarchar(max)" />
+          <Property Name="ActivityCode" Type="nvarchar(max)" />
+          <Property Name="AFENumber" Type="nvarchar(max)" />
+          <Property Name="ApproverCode" Type="nvarchar(max)" />
+          <Property Name="ContractNumber" Type="nvarchar(max)" />
+          <Property Name="CostCenterClient" Type="nvarchar(max)" />
+          <Property Name="GLAccount" Type="nvarchar(max)" />
+          <Property Name="LegalSiteDescriptionLSD" Type="nvarchar(max)" />
+          <Property Name="ProjectManagerClientSide" Type="nvarchar(max)" />
+          <Property Name="InvoiceFile" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CoCFile" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_S_CONFIG">
+          <Key>
+            <PropertyRef Name="Config_ID" />
+          </Key>
+          <Property Name="Config_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Config_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Config_Value" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_S_InvoiceHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InvoiceId" Type="nvarchar(max)" />
+          <Property Name="InvoiceNumber" Type="nvarchar(max)" />
+          <Property Name="ClientCode" Type="nvarchar(max)" />
+          <Property Name="InvoiceIssuedDate" Type="date" />
+          <Property Name="InvoiceAmount" Type="nvarchar(max)" />
+          <Property Name="QuoteCode" Type="nvarchar(max)" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AggregatedCounter">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Value" Type="bigint" Nullable="false" />
+          <Property Name="ExpireAt" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.HangFire.Counter' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Counter">
+          <Key>
+            <PropertyRef Name="Key" />
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Key" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Value" Type="int" Nullable="false" />
+          <Property Name="ExpireAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Hash">
+          <Key>
+            <PropertyRef Name="Key" />
+            <PropertyRef Name="Field" />
+          </Key>
+          <Property Name="Key" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Field" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="ExpireAt" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateId" Type="bigint" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="20" />
+          <Property Name="InvocationData" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Arguments" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="ExpireAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="JobParameter">
+          <Key>
+            <PropertyRef Name="JobId" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="JobId" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="JobQueue">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Queue" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobId" Type="bigint" Nullable="false" />
+          <Property Name="Queue" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FetchedAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="List">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Key" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Value" Type="nvarchar(max)" />
+          <Property Name="ExpireAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Schema">
+          <Key>
+            <PropertyRef Name="Version" />
+          </Key>
+          <Property Name="Version" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Server">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Data" Type="nvarchar(max)" />
+          <Property Name="LastHeartbeat" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Set">
+          <Key>
+            <PropertyRef Name="Key" />
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Key" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Score" Type="float" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="ExpireAt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobId" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Reason" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="Data" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.spt_values' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="spt_values">
+          <Key>
+            <PropertyRef Name="number" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="35" />
+          <Property Name="number" Type="int" Nullable="false" />
+          <Property Name="type" Type="nchar" MaxLength="3" Nullable="false" />
+          <Property Name="low" Type="int" />
+          <Property Name="high" Type="int" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.vBillingAppointment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vBillingAppointment">
+          <Key>
+            <PropertyRef Name="BA_ID" />
+            <PropertyRef Name="DiffAddress" />
+          </Key>
+          <Property Name="Package_ID" Type="uniqueidentifier" />
+          <Property Name="BA_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BA_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_ID" Type="uniqueidentifier" />
+          <Property Name="Invoice_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quote_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bill_To_Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="Invoice_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Reports_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="DiffAddress" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Invoice_Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Delivery_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Delivery_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="STATUS_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'master.dbo.vBillingAppointment_BillToCompany' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vBillingAppointment_BillToCompany">
+          <Property Name="Bill_To_Company" Type="nvarchar" MaxLength="500" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.vCB_BillingAppointment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vCB_BillingAppointment">
+          <Key>
+            <PropertyRef Name="CB_ID" />
+            <PropertyRef Name="DiffAddress" />
+          </Key>
+          <Property Name="CB_Package_ID" Type="uniqueidentifier" />
+          <Property Name="CB_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CB_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_ID" Type="uniqueidentifier" />
+          <Property Name="CB_Invoice_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Invoice_Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Quote_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Bill_To_Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Invoice_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Reports_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="DiffAddress" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="CB_Invoice_Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="CB_Delivery_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Delivery_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="STATUS_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CB_CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_CreateDate" Type="datetime" />
+          <Property Name="CB_UpdateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_UpdateDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.vCB_PackageList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vCB_PackageList">
+          <Key>
+            <PropertyRef Name="CB_Package_ID" />
+          </Key>
+          <Property Name="CB_Package_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CB_Package_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Package_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CB_Package_Delivery_Date" Type="datetime" />
+          <Property Name="CB_Logistics_Delivery_Date" Type="datetime" />
+          <Property Name="CB_Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="STATUS_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.vPackage' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPackage">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+            <PropertyRef Name="DiffAddress" />
+          </Key>
+          <Property Name="Package_ID" Type="uniqueidentifier" />
+          <Property Name="BA_ID" Type="uniqueidentifier" />
+          <Property Name="Invoice_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Package_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Package_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="BA_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Invoice_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quote_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cust_Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bill_To_Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="Delivery_To_Person" Type="nvarchar" MaxLength="50" />
+          <Property Name="Delivery_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Delivery_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Report_To_Comany" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reports_To_Tel" Type="nvarchar" MaxLength="50" />
+          <Property Name="Reports_To_Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Invoice_Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="DiffAddress" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Invoice_Issue_Date" Type="datetime" />
+          <Property Name="Invoice_Date_Override" Type="datetime" />
+          <Property Name="Total_Invoice_Amount_Inc_Vat" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="CreditTerm" Type="nvarchar" MaxLength="10" />
+          <Property Name="Delivery_Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Package_Delivery_Date" Type="datetime" />
+          <Property Name="Logistics_Delivery_Date" Type="datetime" />
+          <Property Name="Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="Expr1" Type="nvarchar" MaxLength="100" />
+          <Property Name="pack_CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="pack_CreateDate" Type="datetime" />
+          <Property Name="BA_CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="BA_CreateDate" Type="datetime" />
+          <Property Name="inv_CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="inv_CreateDate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'master.dbo.vPackageList' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vPackageList">
+          <Key>
+            <PropertyRef Name="Package_ID" />
+          </Key>
+          <Property Name="Package_ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Package_No" Type="nvarchar" MaxLength="50" />
+          <Property Name="Package_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Package_Delivery_Date" Type="datetime" />
+          <Property Name="Logistics_Delivery_Date" Type="datetime" />
+          <Property Name="Status_Code" Type="nvarchar" MaxLength="10" />
+          <Property Name="STATUS_NAME" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_HangFire_JobParameter_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="JobParameter" Type="Self.JobParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobParameter">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HangFire_State_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="State" Type="Self.State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="sp_MScleanupmergepublisher" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_MSrepl_startup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_AdhocListInvoiceByInvoiceAddress" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="INVOICE_ID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_CriteriaSearchBillingAppointment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="BA_NO" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="usp_GetNewRunningNo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IsBilling" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="masterModelStoreContainer">
+          <EntitySet Name="TB_M_Credit_Term" EntityType="Self.TB_M_Credit_Term" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_M_Delivery_Type" EntityType="Self.TB_M_Delivery_Type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_M_STATUS" EntityType="Self.TB_M_STATUS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_R_BA" EntityType="Self.TB_R_BA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_R_CB_BA" EntityType="Self.TB_R_CB_BA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_R_CB_INVOICE" EntityType="Self.TB_R_CB_INVOICE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_R_CB_PACKAGE" EntityType="Self.TB_R_CB_PACKAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_R_INVOICE" EntityType="Self.TB_R_INVOICE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_R_PACKAGE" EntityType="Self.TB_R_PACKAGE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_S_BillingAppointmentReportData" EntityType="Self.TB_S_BillingAppointmentReportData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_S_BillingData" EntityType="Self.TB_S_BillingData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_S_CONFIG" EntityType="Self.TB_S_CONFIG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_S_InvoiceHeader" EntityType="Self.TB_S_InvoiceHeader" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AggregatedCounter" EntityType="Self.AggregatedCounter" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="Hash" EntityType="Self.Hash" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="Job" EntityType="Self.Job" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="JobParameter" EntityType="Self.JobParameter" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="JobQueue" EntityType="Self.JobQueue" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="List" EntityType="Self.List" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="Schema" EntityType="Self.Schema" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="Server" EntityType="Self.Server" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="Set" EntityType="Self.Set" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="State" EntityType="Self.State" Schema="HangFire" store:Type="Tables" />
+          <EntitySet Name="MSreplication_options" EntityType="Self.MSreplication_options" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MSreplication_options].[optname] AS [optname], 
+    [MSreplication_options].[value] AS [value], 
+    [MSreplication_options].[major_version] AS [major_version], 
+    [MSreplication_options].[minor_version] AS [minor_version], 
+    [MSreplication_options].[revision] AS [revision], 
+    [MSreplication_options].[install_failures] AS [install_failures]
+    FROM [dbo].[MSreplication_options] AS [MSreplication_options]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_fallback_db" EntityType="Self.spt_fallback_db" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [spt_fallback_db].[xserver_name] AS [xserver_name], 
+    [spt_fallback_db].[xdttm_ins] AS [xdttm_ins], 
+    [spt_fallback_db].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+    [spt_fallback_db].[xfallback_dbid] AS [xfallback_dbid], 
+    [spt_fallback_db].[name] AS [name], 
+    [spt_fallback_db].[dbid] AS [dbid], 
+    [spt_fallback_db].[status] AS [status], 
+    [spt_fallback_db].[version] AS [version]
+    FROM [dbo].[spt_fallback_db] AS [spt_fallback_db]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_fallback_dev" EntityType="Self.spt_fallback_dev" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [spt_fallback_dev].[xserver_name] AS [xserver_name], 
+    [spt_fallback_dev].[xdttm_ins] AS [xdttm_ins], 
+    [spt_fallback_dev].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+    [spt_fallback_dev].[xfallback_low] AS [xfallback_low], 
+    [spt_fallback_dev].[xfallback_drive] AS [xfallback_drive], 
+    [spt_fallback_dev].[low] AS [low], 
+    [spt_fallback_dev].[high] AS [high], 
+    [spt_fallback_dev].[status] AS [status], 
+    [spt_fallback_dev].[name] AS [name], 
+    [spt_fallback_dev].[phyname] AS [phyname]
+    FROM [dbo].[spt_fallback_dev] AS [spt_fallback_dev]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_fallback_usg" EntityType="Self.spt_fallback_usg" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [spt_fallback_usg].[xserver_name] AS [xserver_name], 
+    [spt_fallback_usg].[xdttm_ins] AS [xdttm_ins], 
+    [spt_fallback_usg].[xdttm_last_ins_upd] AS [xdttm_last_ins_upd], 
+    [spt_fallback_usg].[xfallback_vstart] AS [xfallback_vstart], 
+    [spt_fallback_usg].[dbid] AS [dbid], 
+    [spt_fallback_usg].[segmap] AS [segmap], 
+    [spt_fallback_usg].[lstart] AS [lstart], 
+    [spt_fallback_usg].[sizepg] AS [sizepg], 
+    [spt_fallback_usg].[vstart] AS [vstart]
+    FROM [dbo].[spt_fallback_usg] AS [spt_fallback_usg]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_monitor" EntityType="Self.spt_monitor" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [spt_monitor].[lastrun] AS [lastrun], 
+    [spt_monitor].[cpu_busy] AS [cpu_busy], 
+    [spt_monitor].[io_busy] AS [io_busy], 
+    [spt_monitor].[idle] AS [idle], 
+    [spt_monitor].[pack_received] AS [pack_received], 
+    [spt_monitor].[pack_sent] AS [pack_sent], 
+    [spt_monitor].[connections] AS [connections], 
+    [spt_monitor].[pack_errors] AS [pack_errors], 
+    [spt_monitor].[total_read] AS [total_read], 
+    [spt_monitor].[total_write] AS [total_write], 
+    [spt_monitor].[total_errors] AS [total_errors]
+    FROM [dbo].[spt_monitor] AS [spt_monitor]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Counter" EntityType="Self.Counter" store:Type="Tables" store:Schema="HangFire">
+            <DefiningQuery>SELECT 
+    [Counter].[Key] AS [Key], 
+    [Counter].[Value] AS [Value], 
+    [Counter].[ExpireAt] AS [ExpireAt]
+    FROM [HangFire].[Counter] AS [Counter]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="spt_values" EntityType="Self.spt_values" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [spt_values].[name] AS [name], 
+    [spt_values].[number] AS [number], 
+    [spt_values].[type] AS [type], 
+    [spt_values].[low] AS [low], 
+    [spt_values].[high] AS [high], 
+    [spt_values].[status] AS [status]
+    FROM [dbo].[spt_values] AS [spt_values]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vBillingAppointment" EntityType="Self.vBillingAppointment" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vBillingAppointment].[Package_ID] AS [Package_ID], 
+    [vBillingAppointment].[BA_ID] AS [BA_ID], 
+    [vBillingAppointment].[BA_No] AS [BA_No], 
+    [vBillingAppointment].[Invoice_ID] AS [Invoice_ID], 
+    [vBillingAppointment].[Invoice_No] AS [Invoice_No], 
+    [vBillingAppointment].[Invoice_Cust_Code] AS [Invoice_Cust_Code], 
+    [vBillingAppointment].[Quote_No] AS [Quote_No], 
+    [vBillingAppointment].[Bill_To_Company] AS [Bill_To_Company], 
+    [vBillingAppointment].[Invoice_To_Address] AS [Invoice_To_Address], 
+    [vBillingAppointment].[Reports_To_Address] AS [Reports_To_Address], 
+    [vBillingAppointment].[DiffAddress] AS [DiffAddress], 
+    [vBillingAppointment].[Invoice_Note] AS [Invoice_Note], 
+    [vBillingAppointment].[Delivery_Type] AS [Delivery_Type], 
+    [vBillingAppointment].[Delivery_Name] AS [Delivery_Name], 
+    [vBillingAppointment].[Status_Code] AS [Status_Code], 
+    [vBillingAppointment].[STATUS_NAME] AS [STATUS_NAME], 
+    [vBillingAppointment].[CreateBy] AS [CreateBy], 
+    [vBillingAppointment].[CreateDate] AS [CreateDate], 
+    [vBillingAppointment].[UpdateBy] AS [UpdateBy], 
+    [vBillingAppointment].[UpdateDate] AS [UpdateDate]
+    FROM [dbo].[vBillingAppointment] AS [vBillingAppointment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vCB_BillingAppointment" EntityType="Self.vCB_BillingAppointment" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vCB_BillingAppointment].[CB_Package_ID] AS [CB_Package_ID], 
+    [vCB_BillingAppointment].[CB_ID] AS [CB_ID], 
+    [vCB_BillingAppointment].[CB_No] AS [CB_No], 
+    [vCB_BillingAppointment].[CB_Invoice_ID] AS [CB_Invoice_ID], 
+    [vCB_BillingAppointment].[CB_Invoice_No] AS [CB_Invoice_No], 
+    [vCB_BillingAppointment].[CB_Invoice_Cust_Code] AS [CB_Invoice_Cust_Code], 
+    [vCB_BillingAppointment].[CB_Quote_No] AS [CB_Quote_No], 
+    [vCB_BillingAppointment].[CB_Bill_To_Company] AS [CB_Bill_To_Company], 
+    [vCB_BillingAppointment].[CB_Invoice_To_Address] AS [CB_Invoice_To_Address], 
+    [vCB_BillingAppointment].[CB_Reports_To_Address] AS [CB_Reports_To_Address], 
+    [vCB_BillingAppointment].[DiffAddress] AS [DiffAddress], 
+    [vCB_BillingAppointment].[CB_Invoice_Note] AS [CB_Invoice_Note], 
+    [vCB_BillingAppointment].[CB_Delivery_Type] AS [CB_Delivery_Type], 
+    [vCB_BillingAppointment].[Delivery_Name] AS [Delivery_Name], 
+    [vCB_BillingAppointment].[CB_Status_Code] AS [CB_Status_Code], 
+    [vCB_BillingAppointment].[STATUS_NAME] AS [STATUS_NAME], 
+    [vCB_BillingAppointment].[CB_CreateBy] AS [CB_CreateBy], 
+    [vCB_BillingAppointment].[CB_CreateDate] AS [CB_CreateDate], 
+    [vCB_BillingAppointment].[CB_UpdateBy] AS [CB_UpdateBy], 
+    [vCB_BillingAppointment].[CB_UpdateDate] AS [CB_UpdateDate]
+    FROM [dbo].[vCB_BillingAppointment] AS [vCB_BillingAppointment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vCB_PackageList" EntityType="Self.vCB_PackageList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vCB_PackageList].[CB_Package_ID] AS [CB_Package_ID], 
+    [vCB_PackageList].[CB_Package_No] AS [CB_Package_No], 
+    [vCB_PackageList].[CB_Package_Name] AS [CB_Package_Name], 
+    [vCB_PackageList].[CB_Package_Delivery_Date] AS [CB_Package_Delivery_Date], 
+    [vCB_PackageList].[CB_Logistics_Delivery_Date] AS [CB_Logistics_Delivery_Date], 
+    [vCB_PackageList].[CB_Status_Code] AS [CB_Status_Code], 
+    [vCB_PackageList].[STATUS_NAME] AS [STATUS_NAME], 
+    [vCB_PackageList].[CreateBy] AS [CreateBy], 
+    [vCB_PackageList].[CreateDate] AS [CreateDate]
+    FROM [dbo].[vCB_PackageList] AS [vCB_PackageList]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vPackage" EntityType="Self.vPackage" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPackage].[Package_ID] AS [Package_ID], 
+    [vPackage].[BA_ID] AS [BA_ID], 
+    [vPackage].[Invoice_ID] AS [Invoice_ID], 
+    [vPackage].[Package_No] AS [Package_No], 
+    [vPackage].[Package_Name] AS [Package_Name], 
+    [vPackage].[BA_No] AS [BA_No], 
+    [vPackage].[Invoice_No] AS [Invoice_No], 
+    [vPackage].[Quote_No] AS [Quote_No], 
+    [vPackage].[Cust_Code] AS [Cust_Code], 
+    [vPackage].[Bill_To_Company] AS [Bill_To_Company], 
+    [vPackage].[Delivery_To_Person] AS [Delivery_To_Person], 
+    [vPackage].[Delivery_To_Tel] AS [Delivery_To_Tel], 
+    [vPackage].[Delivery_Address] AS [Delivery_Address], 
+    [vPackage].[Report_To_Comany] AS [Report_To_Comany], 
+    [vPackage].[Reports_To_Tel] AS [Reports_To_Tel], 
+    [vPackage].[Reports_To_Address] AS [Reports_To_Address], 
+    [vPackage].[Invoice_Note] AS [Invoice_Note], 
+    [vPackage].[DiffAddress] AS [DiffAddress], 
+    [vPackage].[Invoice_Issue_Date] AS [Invoice_Issue_Date], 
+    [vPackage].[Invoice_Date_Override] AS [Invoice_Date_Override], 
+    [vPackage].[Total_Invoice_Amount_Inc_Vat] AS [Total_Invoice_Amount_Inc_Vat], 
+    [vPackage].[CreditTerm] AS [CreditTerm], 
+    [vPackage].[Delivery_Type] AS [Delivery_Type], 
+    [vPackage].[Status_Name] AS [Status_Name], 
+    [vPackage].[Package_Delivery_Date] AS [Package_Delivery_Date], 
+    [vPackage].[Logistics_Delivery_Date] AS [Logistics_Delivery_Date], 
+    [vPackage].[Status_Code] AS [Status_Code], 
+    [vPackage].[Expr1] AS [Expr1], 
+    [vPackage].[pack_CreateBy] AS [pack_CreateBy], 
+    [vPackage].[pack_CreateDate] AS [pack_CreateDate], 
+    [vPackage].[BA_CreateBy] AS [BA_CreateBy], 
+    [vPackage].[BA_CreateDate] AS [BA_CreateDate], 
+    [vPackage].[inv_CreateBy] AS [inv_CreateBy], 
+    [vPackage].[inv_CreateDate] AS [inv_CreateDate]
+    FROM [dbo].[vPackage] AS [vPackage]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vPackageList" EntityType="Self.vPackageList" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vPackageList].[Package_ID] AS [Package_ID], 
+    [vPackageList].[Package_No] AS [Package_No], 
+    [vPackageList].[Package_Name] AS [Package_Name], 
+    [vPackageList].[Package_Delivery_Date] AS [Package_Delivery_Date], 
+    [vPackageList].[Logistics_Delivery_Date] AS [Logistics_Delivery_Date], 
+    [vPackageList].[Status_Code] AS [Status_Code], 
+    [vPackageList].[STATUS_NAME] AS [STATUS_NAME], 
+    [vPackageList].[CreateBy] AS [CreateBy], 
+    [vPackageList].[CreateDate] AS [CreateDate]
+    FROM [dbo].[vPackageList] AS [vPackageList]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_HangFire_JobParameter_Job" Association="Self.FK_HangFire_JobParameter_Job">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="JobParameter" EntitySet="JobParameter" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HangFire_State_Job" Association="Self.FK_HangFire_State_Job">
+            <End Role="Job" EntitySet="Job" />
+            <End Role="State" EntitySet="State" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="masterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TB_M_Credit_Term">
+          <Key>
+            <PropertyRef Name="Credit_Term_ID" />
+          </Key>
+          <Property Name="Credit_Term_ID" Type="Guid" Nullable="false" />
+          <Property Name="Credit_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Credit_Term_Value" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_M_Delivery_Type">
+          <Key>
+            <PropertyRef Name="Delivery_Type_ID" />
+          </Key>
+          <Property Name="Delivery_Type_ID" Type="Guid" Nullable="false" />
+          <Property Name="Delivery_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_M_STATUS">
+          <Key>
+            <PropertyRef Name="STATUS_ID" />
+          </Key>
+          <Property Name="STATUS_ID" Type="Guid" Nullable="false" />
+          <Property Name="STATUS_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DOCTYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOCTYPE_SUB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_R_BA">
+          <Key>
+            <PropertyRef Name="BA_ID" />
+          </Key>
+          <Property Name="BA_ID" Type="Guid" Nullable="false" />
+          <Property Name="Package_ID" Type="Guid" />
+          <Property Name="BA_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quote_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Comany" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Report_To_Comany" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Reports_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Reports_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Lab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_R_CB_BA">
+          <Key>
+            <PropertyRef Name="CB_ID" />
+          </Key>
+          <Property Name="CB_ID" Type="Guid" Nullable="false" />
+          <Property Name="CB_Package_ID" Type="Guid" />
+          <Property Name="CB_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Quote_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Comany" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Report_To_Comany" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Reports_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Reports_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Delivery_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Delivery_Lab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CB_CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CB_CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="CB_UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_R_CB_INVOICE">
+          <Key>
+            <PropertyRef Name="CB_Invoice_ID" />
+          </Key>
+          <Property Name="CB_Invoice_ID" Type="Guid" Nullable="false" />
+          <Property Name="CB_ID" Type="Guid" />
+          <Property Name="CB_Invoice_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Bill_To_Company" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Delivery_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Delivery_To_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Delivery_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Report_To_Comany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Reports_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Reports_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_Issue_Date" Type="DateTime" Precision="3" />
+          <Property Name="CB_Invoice_Date_Override" Type="DateTime" Precision="3" />
+          <Property Name="CB_Total_Invoice_Amount_Inc_Vat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreditTerm" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_R_CB_PACKAGE">
+          <Key>
+            <PropertyRef Name="CB_Package_ID" />
+          </Key>
+          <Property Name="CB_Package_ID" Type="Guid" Nullable="false" />
+          <Property Name="CB_Package_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Package_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Package_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="CB_Package_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Company" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_Delivery_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_Delivery_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_Delivery_Lab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Logistics_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="CB_Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_R_INVOICE">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+          </Key>
+          <Property Name="Invoice_ID" Type="Guid" Nullable="false" />
+          <Property Name="BA_ID" Type="Guid" />
+          <Property Name="Invoice_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bill_To_Company" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_To_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Report_To_Comany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reports_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Reports_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_Issue_Date" Type="DateTime" Precision="3" />
+          <Property Name="Invoice_Date_Override" Type="DateTime" Precision="3" />
+          <Property Name="Total_Invoice_Amount_Inc_Vat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreditTerm" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_R_PACKAGE">
+          <Key>
+            <PropertyRef Name="Package_ID" />
+          </Key>
+          <Property Name="Package_ID" Type="Guid" Nullable="false" />
+          <Property Name="Package_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Package_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Package_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="Package_DESC" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Company" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_Delivery_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_Delivery_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_Delivery_Lab" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Logistics_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_S_BillingAppointmentReportData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="InvoiceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliveryType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliveryType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliveryLaboratory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliveryLaboratory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QuoteCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreditTerm" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliveryClientCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToClientCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToClientName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliveryClientName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToPersonName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToPersonTelephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToPersonMobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToPersonName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToPersonTelephone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToPersonMobile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToOffice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToAddress1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToAddress3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToZip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliverToLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToOffice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToAddress1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToAddress3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToZip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AnalysisReportDeliverToLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliveryNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceDeliveryProcess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceIssuedDate" Type="DateTime" Precision="0" />
+          <Property Name="InvoiceDateOverride" Type="DateTime" Precision="0" />
+          <Property Name="InvoiceNumbersIncludedInSearch" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TotalInvoiceAmountIncludingVat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToPersonName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToAddress1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToAddress2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToAddress3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToZip" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BillToClientCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillToClientName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BillToContactPerson" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentDeliveryProcess" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentDeliveryNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportLocation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GenerateBillingAppointmentPerInvoice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoicePaid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CeateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_S_BillingData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Workorder" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Site" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="NAVAccountNumber" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Project" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="PurchaseOrder" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToContact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToOffice" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReportToClient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceContact" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Laboratory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClientManager" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ActivityCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AFENumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ApproverCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContractNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CostCenterClient" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GLAccount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LegalSiteDescriptionLSD" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectManagerClientSide" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CoCFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_S_CONFIG">
+          <Key>
+            <PropertyRef Name="Config_ID" />
+          </Key>
+          <Property Name="Config_ID" Type="Guid" Nullable="false" />
+          <Property Name="Config_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Config_Value" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_S_InvoiceHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="InvoiceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClientCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="InvoiceIssuedDate" Type="DateTime" Precision="0" />
+          <Property Name="InvoiceAmount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QuoteCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AggregatedCounter">
+          <Key>
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="Int64" Nullable="false" />
+          <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Hash">
+          <Key>
+            <PropertyRef Name="Key" />
+            <PropertyRef Name="Field" />
+          </Key>
+          <Property Name="Key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Field" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpireAt" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateId" Type="Int64" />
+          <Property Name="StateName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="InvocationData" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Arguments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="JobParameters" Relationship="Self.FK_HangFire_JobParameter_Job" FromRole="Job" ToRole="JobParameter" />
+          <NavigationProperty Name="States" Relationship="Self.FK_HangFire_State_Job" FromRole="Job" ToRole="State" />
+        </EntityType>
+        <EntityType Name="JobParameter">
+          <Key>
+            <PropertyRef Name="JobId" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="JobId" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Job" Relationship="Self.FK_HangFire_JobParameter_Job" FromRole="JobParameter" ToRole="Job" />
+        </EntityType>
+        <EntityType Name="JobQueue">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Queue" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobId" Type="Int64" Nullable="false" />
+          <Property Name="Queue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FetchedAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="List">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Key" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Schema">
+          <Key>
+            <PropertyRef Name="Version" />
+          </Key>
+          <Property Name="Version" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Server">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastHeartbeat" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Set">
+          <Key>
+            <PropertyRef Name="Key" />
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Score" Type="Double" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobId" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Reason" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Job" Relationship="Self.FK_HangFire_State_Job" FromRole="State" ToRole="Job" />
+        </EntityType>
+        <EntityType Name="MSreplication_options">
+          <Key>
+            <PropertyRef Name="optname" />
+            <PropertyRef Name="value" />
+            <PropertyRef Name="major_version" />
+            <PropertyRef Name="minor_version" />
+            <PropertyRef Name="revision" />
+            <PropertyRef Name="install_failures" />
+          </Key>
+          <Property Name="optname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="value" Type="Boolean" Nullable="false" />
+          <Property Name="major_version" Type="Int32" Nullable="false" />
+          <Property Name="minor_version" Type="Int32" Nullable="false" />
+          <Property Name="revision" Type="Int32" Nullable="false" />
+          <Property Name="install_failures" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spt_fallback_db">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="dbid" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="version" />
+          </Key>
+          <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xfallback_dbid" Type="Int16" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="dbid" Type="Int16" Nullable="false" />
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="version" Type="Int16" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spt_fallback_dev">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="low" />
+            <PropertyRef Name="high" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="phyname" />
+          </Key>
+          <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xfallback_low" Type="Int32" />
+          <Property Name="xfallback_drive" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="low" Type="Int32" Nullable="false" />
+          <Property Name="high" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phyname" Type="String" MaxLength="127" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spt_fallback_usg">
+          <Key>
+            <PropertyRef Name="xserver_name" />
+            <PropertyRef Name="xdttm_ins" />
+            <PropertyRef Name="xdttm_last_ins_upd" />
+            <PropertyRef Name="dbid" />
+            <PropertyRef Name="segmap" />
+            <PropertyRef Name="lstart" />
+            <PropertyRef Name="sizepg" />
+            <PropertyRef Name="vstart" />
+          </Key>
+          <Property Name="xserver_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="xdttm_ins" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xdttm_last_ins_upd" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="xfallback_vstart" Type="Int32" />
+          <Property Name="dbid" Type="Int16" Nullable="false" />
+          <Property Name="segmap" Type="Int32" Nullable="false" />
+          <Property Name="lstart" Type="Int32" Nullable="false" />
+          <Property Name="sizepg" Type="Int32" Nullable="false" />
+          <Property Name="vstart" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="spt_monitor">
+          <Key>
+            <PropertyRef Name="lastrun" />
+            <PropertyRef Name="cpu_busy" />
+            <PropertyRef Name="io_busy" />
+            <PropertyRef Name="idle" />
+            <PropertyRef Name="pack_received" />
+            <PropertyRef Name="pack_sent" />
+            <PropertyRef Name="connections" />
+            <PropertyRef Name="pack_errors" />
+            <PropertyRef Name="total_read" />
+            <PropertyRef Name="total_write" />
+            <PropertyRef Name="total_errors" />
+          </Key>
+          <Property Name="lastrun" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="cpu_busy" Type="Int32" Nullable="false" />
+          <Property Name="io_busy" Type="Int32" Nullable="false" />
+          <Property Name="idle" Type="Int32" Nullable="false" />
+          <Property Name="pack_received" Type="Int32" Nullable="false" />
+          <Property Name="pack_sent" Type="Int32" Nullable="false" />
+          <Property Name="connections" Type="Int32" Nullable="false" />
+          <Property Name="pack_errors" Type="Int32" Nullable="false" />
+          <Property Name="total_read" Type="Int32" Nullable="false" />
+          <Property Name="total_write" Type="Int32" Nullable="false" />
+          <Property Name="total_errors" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Counter">
+          <Key>
+            <PropertyRef Name="Key" />
+            <PropertyRef Name="Value" />
+          </Key>
+          <Property Name="Key" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <Property Name="ExpireAt" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="spt_values">
+          <Key>
+            <PropertyRef Name="number" />
+            <PropertyRef Name="type" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="number" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="3" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="low" Type="Int32" />
+          <Property Name="high" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vBillingAppointment">
+          <Key>
+            <PropertyRef Name="BA_ID" />
+            <PropertyRef Name="DiffAddress" />
+          </Key>
+          <Property Name="Package_ID" Type="Guid" />
+          <Property Name="BA_ID" Type="Guid" Nullable="false" />
+          <Property Name="BA_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_ID" Type="Guid" />
+          <Property Name="Invoice_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quote_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bill_To_Company" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Reports_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DiffAddress" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Invoice_Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vCB_BillingAppointment">
+          <Key>
+            <PropertyRef Name="CB_ID" />
+            <PropertyRef Name="DiffAddress" />
+          </Key>
+          <Property Name="CB_Package_ID" Type="Guid" />
+          <Property Name="CB_ID" Type="Guid" Nullable="false" />
+          <Property Name="CB_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_ID" Type="Guid" />
+          <Property Name="CB_Invoice_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Quote_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Bill_To_Company" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Invoice_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Reports_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DiffAddress" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CB_Invoice_Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Delivery_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CB_CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CB_UpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vCB_PackageList">
+          <Key>
+            <PropertyRef Name="CB_Package_ID" />
+          </Key>
+          <Property Name="CB_Package_ID" Type="Guid" Nullable="false" />
+          <Property Name="CB_Package_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Package_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CB_Package_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="CB_Logistics_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="CB_Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vPackage">
+          <Key>
+            <PropertyRef Name="Invoice_ID" />
+            <PropertyRef Name="DiffAddress" />
+          </Key>
+          <Property Name="Package_ID" Type="Guid" />
+          <Property Name="BA_ID" Type="Guid" />
+          <Property Name="Invoice_ID" Type="Guid" Nullable="false" />
+          <Property Name="Package_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Package_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BA_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quote_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cust_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Bill_To_Company" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_To_Person" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Report_To_Comany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reports_To_Tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Reports_To_Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Invoice_Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="DiffAddress" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Invoice_Issue_Date" Type="DateTime" Precision="3" />
+          <Property Name="Invoice_Date_Override" Type="DateTime" Precision="3" />
+          <Property Name="Total_Invoice_Amount_Inc_Vat" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="CreditTerm" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Delivery_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Package_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="Logistics_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Expr1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pack_CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pack_CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="BA_CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BA_CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="inv_CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="inv_CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="vPackageList">
+          <Key>
+            <PropertyRef Name="Package_ID" />
+          </Key>
+          <Property Name="Package_ID" Type="Guid" Nullable="false" />
+          <Property Name="Package_No" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Package_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Package_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="Logistics_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="Status_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="STATUS_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <Association Name="FK_HangFire_JobParameter_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="JobParameter" Type="Self.JobParameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="JobParameter">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HangFire_State_Job">
+          <End Role="Job" Type="Self.Job" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="State" Type="Self.State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Job">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="masterEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_M_Credit_Term" EntityType="Self.TB_M_Credit_Term" />
+          <EntitySet Name="TB_M_Delivery_Type" EntityType="Self.TB_M_Delivery_Type" />
+          <EntitySet Name="TB_M_STATUS" EntityType="Self.TB_M_STATUS" />
+          <EntitySet Name="TB_R_BA" EntityType="Self.TB_R_BA" />
+          <EntitySet Name="TB_R_CB_BA" EntityType="Self.TB_R_CB_BA" />
+          <EntitySet Name="TB_R_CB_INVOICE" EntityType="Self.TB_R_CB_INVOICE" />
+          <EntitySet Name="TB_R_CB_PACKAGE" EntityType="Self.TB_R_CB_PACKAGE" />
+          <EntitySet Name="TB_R_INVOICE" EntityType="Self.TB_R_INVOICE" />
+          <EntitySet Name="TB_R_PACKAGE" EntityType="Self.TB_R_PACKAGE" />
+          <EntitySet Name="TB_S_BillingAppointmentReportData" EntityType="Self.TB_S_BillingAppointmentReportData" />
+          <EntitySet Name="TB_S_BillingData" EntityType="Self.TB_S_BillingData" />
+          <EntitySet Name="TB_S_CONFIG" EntityType="Self.TB_S_CONFIG" />
+          <EntitySet Name="TB_S_InvoiceHeader" EntityType="Self.TB_S_InvoiceHeader" />
+          <EntitySet Name="AggregatedCounters" EntityType="Self.AggregatedCounter" />
+          <EntitySet Name="Hashes" EntityType="Self.Hash" />
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <EntitySet Name="JobParameters" EntityType="Self.JobParameter" />
+          <EntitySet Name="JobQueues" EntityType="Self.JobQueue" />
+          <EntitySet Name="Lists" EntityType="Self.List" />
+          <EntitySet Name="Schemata" EntityType="Self.Schema" />
+          <EntitySet Name="Servers" EntityType="Self.Server" />
+          <EntitySet Name="Sets" EntityType="Self.Set" />
+          <EntitySet Name="States" EntityType="Self.State" />
+          <EntitySet Name="MSreplication_options" EntityType="Self.MSreplication_options" />
+          <EntitySet Name="spt_fallback_db" EntityType="Self.spt_fallback_db" />
+          <EntitySet Name="spt_fallback_dev" EntityType="Self.spt_fallback_dev" />
+          <EntitySet Name="spt_fallback_usg" EntityType="Self.spt_fallback_usg" />
+          <EntitySet Name="spt_monitor" EntityType="Self.spt_monitor" />
+          <EntitySet Name="Counters" EntityType="Self.Counter" />
+          <EntitySet Name="spt_values" EntityType="Self.spt_values" />
+          <EntitySet Name="vBillingAppointments" EntityType="Self.vBillingAppointment" />
+          <EntitySet Name="vCB_BillingAppointment" EntityType="Self.vCB_BillingAppointment" />
+          <EntitySet Name="vCB_PackageList" EntityType="Self.vCB_PackageList" />
+          <EntitySet Name="vPackages" EntityType="Self.vPackage" />
+          <EntitySet Name="vPackageLists" EntityType="Self.vPackageList" />
+          <AssociationSet Name="FK_HangFire_JobParameter_Job" Association="Self.FK_HangFire_JobParameter_Job">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="JobParameter" EntitySet="JobParameters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HangFire_State_Job" Association="Self.FK_HangFire_State_Job">
+            <End Role="Job" EntitySet="Jobs" />
+            <End Role="State" EntitySet="States" />
+          </AssociationSet>
+          <FunctionImport Name="sp_MScleanupmergepublisher" />
+          <FunctionImport Name="sp_MSrepl_startup" />
+          <FunctionImport Name="usp_AdhocListInvoiceByInvoiceAddress">
+            <Parameter Name="INVOICE_ID" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_CriteriaSearchBillingAppointment" ReturnType="Collection(String)">
+            <Parameter Name="BA_NO" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetNewRunningNo">
+            <Parameter Name="IsBilling" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="masterModelStoreContainer" CdmEntityContainer="masterEntities">
+          <EntitySetMapping Name="TB_M_Credit_Term">
+            <EntityTypeMapping TypeName="masterModel.TB_M_Credit_Term">
+              <MappingFragment StoreEntitySet="TB_M_Credit_Term">
+                <ScalarProperty Name="Credit_Term_ID" ColumnName="Credit_Term_ID" />
+                <ScalarProperty Name="Credit_Code" ColumnName="Credit_Code" />
+                <ScalarProperty Name="Credit_Term_Value" ColumnName="Credit_Term_Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_M_Delivery_Type">
+            <EntityTypeMapping TypeName="masterModel.TB_M_Delivery_Type">
+              <MappingFragment StoreEntitySet="TB_M_Delivery_Type">
+                <ScalarProperty Name="Delivery_Type_ID" ColumnName="Delivery_Type_ID" />
+                <ScalarProperty Name="Delivery_Code" ColumnName="Delivery_Code" />
+                <ScalarProperty Name="Delivery_Type" ColumnName="Delivery_Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_M_STATUS">
+            <EntityTypeMapping TypeName="masterModel.TB_M_STATUS">
+              <MappingFragment StoreEntitySet="TB_M_STATUS">
+                <ScalarProperty Name="STATUS_ID" ColumnName="STATUS_ID" />
+                <ScalarProperty Name="STATUS_CODE" ColumnName="STATUS_CODE" />
+                <ScalarProperty Name="STATUS_NAME" ColumnName="STATUS_NAME" />
+                <ScalarProperty Name="DOCTYPE" ColumnName="DOCTYPE" />
+                <ScalarProperty Name="DOCTYPE_SUB" ColumnName="DOCTYPE_SUB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_R_BA">
+            <EntityTypeMapping TypeName="masterModel.TB_R_BA">
+              <MappingFragment StoreEntitySet="TB_R_BA">
+                <ScalarProperty Name="BA_ID" ColumnName="BA_ID" />
+                <ScalarProperty Name="Package_ID" ColumnName="Package_ID" />
+                <ScalarProperty Name="BA_No" ColumnName="BA_No" />
+                <ScalarProperty Name="Quote_No" ColumnName="Quote_No" />
+                <ScalarProperty Name="Invoice_To_Comany" ColumnName="Invoice_To_Comany" />
+                <ScalarProperty Name="Invoice_To_Person" ColumnName="Invoice_To_Person" />
+                <ScalarProperty Name="Invoice_To_Address" ColumnName="Invoice_To_Address" />
+                <ScalarProperty Name="Invoice_Cust_Code" ColumnName="Invoice_Cust_Code" />
+                <ScalarProperty Name="Invoice_Note" ColumnName="Invoice_Note" />
+                <ScalarProperty Name="Report_To_Comany" ColumnName="Report_To_Comany" />
+                <ScalarProperty Name="Reports_To_Address" ColumnName="Reports_To_Address" />
+                <ScalarProperty Name="Reports_To_Tel" ColumnName="Reports_To_Tel" />
+                <ScalarProperty Name="Invoice_To_Tel" ColumnName="Invoice_To_Tel" />
+                <ScalarProperty Name="Delivery_Type" ColumnName="Delivery_Type" />
+                <ScalarProperty Name="Delivery_Lab" ColumnName="Delivery_Lab" />
+                <ScalarProperty Name="Status_Code" ColumnName="Status_Code" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_R_CB_BA">
+            <EntityTypeMapping TypeName="masterModel.TB_R_CB_BA">
+              <MappingFragment StoreEntitySet="TB_R_CB_BA">
+                <ScalarProperty Name="CB_ID" ColumnName="CB_ID" />
+                <ScalarProperty Name="CB_Package_ID" ColumnName="CB_Package_ID" />
+                <ScalarProperty Name="CB_No" ColumnName="CB_No" />
+                <ScalarProperty Name="CB_Quote_No" ColumnName="CB_Quote_No" />
+                <ScalarProperty Name="CB_Invoice_To_Comany" ColumnName="CB_Invoice_To_Comany" />
+                <ScalarProperty Name="CB_Invoice_To_Person" ColumnName="CB_Invoice_To_Person" />
+                <ScalarProperty Name="CB_Invoice_To_Address" ColumnName="CB_Invoice_To_Address" />
+                <ScalarProperty Name="CB_Invoice_Cust_Code" ColumnName="CB_Invoice_Cust_Code" />
+                <ScalarProperty Name="CB_Invoice_Note" ColumnName="CB_Invoice_Note" />
+                <ScalarProperty Name="CB_Report_To_Comany" ColumnName="CB_Report_To_Comany" />
+                <ScalarProperty Name="CB_Reports_To_Address" ColumnName="CB_Reports_To_Address" />
+                <ScalarProperty Name="CB_Reports_To_Tel" ColumnName="CB_Reports_To_Tel" />
+                <ScalarProperty Name="CB_Invoice_To_Tel" ColumnName="CB_Invoice_To_Tel" />
+                <ScalarProperty Name="CB_Delivery_Type" ColumnName="CB_Delivery_Type" />
+                <ScalarProperty Name="CB_Delivery_Lab" ColumnName="CB_Delivery_Lab" />
+                <ScalarProperty Name="CB_Status_Code" ColumnName="CB_Status_Code" />
+                <ScalarProperty Name="CB_CreateDate" ColumnName="CB_CreateDate" />
+                <ScalarProperty Name="CB_CreateBy" ColumnName="CB_CreateBy" />
+                <ScalarProperty Name="CB_UpdateDate" ColumnName="CB_UpdateDate" />
+                <ScalarProperty Name="CB_UpdateBy" ColumnName="CB_UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_R_CB_INVOICE">
+            <EntityTypeMapping TypeName="masterModel.TB_R_CB_INVOICE">
+              <MappingFragment StoreEntitySet="TB_R_CB_INVOICE">
+                <ScalarProperty Name="CB_Invoice_ID" ColumnName="CB_Invoice_ID" />
+                <ScalarProperty Name="CB_ID" ColumnName="CB_ID" />
+                <ScalarProperty Name="CB_Invoice_No" ColumnName="CB_Invoice_No" />
+                <ScalarProperty Name="CB_Cust_Code" ColumnName="CB_Cust_Code" />
+                <ScalarProperty Name="CB_Bill_To_Company" ColumnName="CB_Bill_To_Company" />
+                <ScalarProperty Name="CB_Delivery_Address" ColumnName="CB_Delivery_Address" />
+                <ScalarProperty Name="CB_Delivery_To_Person" ColumnName="CB_Delivery_To_Person" />
+                <ScalarProperty Name="CB_Delivery_To_Tel" ColumnName="CB_Delivery_To_Tel" />
+                <ScalarProperty Name="CB_Report_To_Comany" ColumnName="CB_Report_To_Comany" />
+                <ScalarProperty Name="CB_Reports_To_Address" ColumnName="CB_Reports_To_Address" />
+                <ScalarProperty Name="CB_Reports_To_Tel" ColumnName="CB_Reports_To_Tel" />
+                <ScalarProperty Name="CB_Invoice_Issue_Date" ColumnName="CB_Invoice_Issue_Date" />
+                <ScalarProperty Name="CB_Invoice_Date_Override" ColumnName="CB_Invoice_Date_Override" />
+                <ScalarProperty Name="CB_Total_Invoice_Amount_Inc_Vat" ColumnName="CB_Total_Invoice_Amount_Inc_Vat" />
+                <ScalarProperty Name="CreditTerm" ColumnName="CreditTerm" />
+                <ScalarProperty Name="Status_Code" ColumnName="Status_Code" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_R_CB_PACKAGE">
+            <EntityTypeMapping TypeName="masterModel.TB_R_CB_PACKAGE">
+              <MappingFragment StoreEntitySet="TB_R_CB_PACKAGE">
+                <ScalarProperty Name="CB_Package_ID" ColumnName="CB_Package_ID" />
+                <ScalarProperty Name="CB_Package_No" ColumnName="CB_Package_No" />
+                <ScalarProperty Name="CB_Package_Name" ColumnName="CB_Package_Name" />
+                <ScalarProperty Name="CB_Package_Delivery_Date" ColumnName="CB_Package_Delivery_Date" />
+                <ScalarProperty Name="CB_Package_DESC" ColumnName="CB_Package_DESC" />
+                <ScalarProperty Name="CB_Invoice_To_Address" ColumnName="CB_Invoice_To_Address" />
+                <ScalarProperty Name="CB_Invoice_To_Person" ColumnName="CB_Invoice_To_Person" />
+                <ScalarProperty Name="CB_Invoice_To_Cust_Code" ColumnName="CB_Invoice_To_Cust_Code" />
+                <ScalarProperty Name="CB_Invoice_To_Company" ColumnName="CB_Invoice_To_Company" />
+                <ScalarProperty Name="CB_Invoice_Delivery_Phone" ColumnName="CB_Invoice_Delivery_Phone" />
+                <ScalarProperty Name="CB_Invoice_Delivery_Type" ColumnName="CB_Invoice_Delivery_Type" />
+                <ScalarProperty Name="CB_Invoice_Delivery_Lab" ColumnName="CB_Invoice_Delivery_Lab" />
+                <ScalarProperty Name="CB_Logistics_Delivery_Date" ColumnName="CB_Logistics_Delivery_Date" />
+                <ScalarProperty Name="CB_Status_Code" ColumnName="CB_Status_Code" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_R_INVOICE">
+            <EntityTypeMapping TypeName="masterModel.TB_R_INVOICE">
+              <MappingFragment StoreEntitySet="TB_R_INVOICE">
+                <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
+                <ScalarProperty Name="BA_ID" ColumnName="BA_ID" />
+                <ScalarProperty Name="Invoice_No" ColumnName="Invoice_No" />
+                <ScalarProperty Name="Cust_Code" ColumnName="Cust_Code" />
+                <ScalarProperty Name="Bill_To_Company" ColumnName="Bill_To_Company" />
+                <ScalarProperty Name="Delivery_Address" ColumnName="Delivery_Address" />
+                <ScalarProperty Name="Delivery_To_Person" ColumnName="Delivery_To_Person" />
+                <ScalarProperty Name="Delivery_To_Tel" ColumnName="Delivery_To_Tel" />
+                <ScalarProperty Name="Report_To_Comany" ColumnName="Report_To_Comany" />
+                <ScalarProperty Name="Reports_To_Address" ColumnName="Reports_To_Address" />
+                <ScalarProperty Name="Reports_To_Tel" ColumnName="Reports_To_Tel" />
+                <ScalarProperty Name="Invoice_Issue_Date" ColumnName="Invoice_Issue_Date" />
+                <ScalarProperty Name="Invoice_Date_Override" ColumnName="Invoice_Date_Override" />
+                <ScalarProperty Name="Total_Invoice_Amount_Inc_Vat" ColumnName="Total_Invoice_Amount_Inc_Vat" />
+                <ScalarProperty Name="CreditTerm" ColumnName="CreditTerm" />
+                <ScalarProperty Name="Status_Code" ColumnName="Status_Code" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_R_PACKAGE">
+            <EntityTypeMapping TypeName="masterModel.TB_R_PACKAGE">
+              <MappingFragment StoreEntitySet="TB_R_PACKAGE">
+                <ScalarProperty Name="Package_ID" ColumnName="Package_ID" />
+                <ScalarProperty Name="Package_No" ColumnName="Package_No" />
+                <ScalarProperty Name="Package_Name" ColumnName="Package_Name" />
+                <ScalarProperty Name="Package_Delivery_Date" ColumnName="Package_Delivery_Date" />
+                <ScalarProperty Name="Package_DESC" ColumnName="Package_DESC" />
+                <ScalarProperty Name="Invoice_To_Address" ColumnName="Invoice_To_Address" />
+                <ScalarProperty Name="Invoice_To_Person" ColumnName="Invoice_To_Person" />
+                <ScalarProperty Name="Invoice_To_Cust_Code" ColumnName="Invoice_To_Cust_Code" />
+                <ScalarProperty Name="Invoice_To_Company" ColumnName="Invoice_To_Company" />
+                <ScalarProperty Name="Invoice_Delivery_Phone" ColumnName="Invoice_Delivery_Phone" />
+                <ScalarProperty Name="Invoice_Delivery_Type" ColumnName="Invoice_Delivery_Type" />
+                <ScalarProperty Name="Invoice_Delivery_Lab" ColumnName="Invoice_Delivery_Lab" />
+                <ScalarProperty Name="Logistics_Delivery_Date" ColumnName="Logistics_Delivery_Date" />
+                <ScalarProperty Name="Status_Code" ColumnName="Status_Code" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_S_BillingAppointmentReportData">
+            <EntityTypeMapping TypeName="masterModel.TB_S_BillingAppointmentReportData">
+              <MappingFragment StoreEntitySet="TB_S_BillingAppointmentReportData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+                <ScalarProperty Name="InvoiceDeliveryType" ColumnName="InvoiceDeliveryType" />
+                <ScalarProperty Name="AnalysisReportDeliveryType" ColumnName="AnalysisReportDeliveryType" />
+                <ScalarProperty Name="InvoiceDeliveryLaboratory" ColumnName="InvoiceDeliveryLaboratory" />
+                <ScalarProperty Name="AnalysisReportDeliveryLaboratory" ColumnName="AnalysisReportDeliveryLaboratory" />
+                <ScalarProperty Name="QuoteCode" ColumnName="QuoteCode" />
+                <ScalarProperty Name="CreditTerm" ColumnName="CreditTerm" />
+                <ScalarProperty Name="InvoiceDeliveryClientCode" ColumnName="InvoiceDeliveryClientCode" />
+                <ScalarProperty Name="AnalysisReportDeliverToClientCode" ColumnName="AnalysisReportDeliverToClientCode" />
+                <ScalarProperty Name="AnalysisReportDeliverToClientName" ColumnName="AnalysisReportDeliverToClientName" />
+                <ScalarProperty Name="InvoiceDeliveryClientName" ColumnName="InvoiceDeliveryClientName" />
+                <ScalarProperty Name="InvoiceDeliverToPersonName" ColumnName="InvoiceDeliverToPersonName" />
+                <ScalarProperty Name="InvoiceDeliverToPersonTelephone" ColumnName="InvoiceDeliverToPersonTelephone" />
+                <ScalarProperty Name="InvoiceDeliverToPersonMobile" ColumnName="InvoiceDeliverToPersonMobile" />
+                <ScalarProperty Name="AnalysisReportDeliverToPersonName" ColumnName="AnalysisReportDeliverToPersonName" />
+                <ScalarProperty Name="AnalysisReportDeliverToPersonTelephone" ColumnName="AnalysisReportDeliverToPersonTelephone" />
+                <ScalarProperty Name="AnalysisReportDeliverToPersonMobile" ColumnName="AnalysisReportDeliverToPersonMobile" />
+                <ScalarProperty Name="InvoiceDeliverToOffice" ColumnName="InvoiceDeliverToOffice" />
+                <ScalarProperty Name="InvoiceDeliverToAddress1" ColumnName="InvoiceDeliverToAddress1" />
+                <ScalarProperty Name="InvoiceDeliverToAddress2" ColumnName="InvoiceDeliverToAddress2" />
+                <ScalarProperty Name="InvoiceDeliverToAddress3" ColumnName="InvoiceDeliverToAddress3" />
+                <ScalarProperty Name="InvoiceDeliverToCity" ColumnName="InvoiceDeliverToCity" />
+                <ScalarProperty Name="InvoiceDeliverToState" ColumnName="InvoiceDeliverToState" />
+                <ScalarProperty Name="InvoiceDeliverToZip" ColumnName="InvoiceDeliverToZip" />
+                <ScalarProperty Name="InvoiceDeliverToLocation" ColumnName="InvoiceDeliverToLocation" />
+                <ScalarProperty Name="AnalysisReportDeliverToOffice" ColumnName="AnalysisReportDeliverToOffice" />
+                <ScalarProperty Name="AnalysisReportDeliverToAddress1" ColumnName="AnalysisReportDeliverToAddress1" />
+                <ScalarProperty Name="AnalysisReportDeliverToAddress2" ColumnName="AnalysisReportDeliverToAddress2" />
+                <ScalarProperty Name="AnalysisReportDeliverToAddress3" ColumnName="AnalysisReportDeliverToAddress3" />
+                <ScalarProperty Name="AnalysisReportDeliverToCity" ColumnName="AnalysisReportDeliverToCity" />
+                <ScalarProperty Name="AnalysisReportDeliverToState" ColumnName="AnalysisReportDeliverToState" />
+                <ScalarProperty Name="AnalysisReportDeliverToZip" ColumnName="AnalysisReportDeliverToZip" />
+                <ScalarProperty Name="AnalysisReportDeliverToLocation" ColumnName="AnalysisReportDeliverToLocation" />
+                <ScalarProperty Name="InvoiceDeliveryNotes" ColumnName="InvoiceDeliveryNotes" />
+                <ScalarProperty Name="InvoiceDeliveryProcess" ColumnName="InvoiceDeliveryProcess" />
+                <ScalarProperty Name="InvoiceIssuedDate" ColumnName="InvoiceIssuedDate" />
+                <ScalarProperty Name="InvoiceDateOverride" ColumnName="InvoiceDateOverride" />
+                <ScalarProperty Name="InvoiceNumbersIncludedInSearch" ColumnName="InvoiceNumbersIncludedInSearch" />
+                <ScalarProperty Name="TotalInvoiceAmountIncludingVat" ColumnName="TotalInvoiceAmountIncludingVat" />
+                <ScalarProperty Name="ReportToPersonName" ColumnName="ReportToPersonName" />
+                <ScalarProperty Name="ReportToAddress1" ColumnName="ReportToAddress1" />
+                <ScalarProperty Name="ReportToAddress2" ColumnName="ReportToAddress2" />
+                <ScalarProperty Name="ReportToAddress3" ColumnName="ReportToAddress3" />
+                <ScalarProperty Name="ReportToCity" ColumnName="ReportToCity" />
+                <ScalarProperty Name="ReportToState" ColumnName="ReportToState" />
+                <ScalarProperty Name="ReportToZip" ColumnName="ReportToZip" />
+                <ScalarProperty Name="ReportToLocation" ColumnName="ReportToLocation" />
+                <ScalarProperty Name="BillToClientCode" ColumnName="BillToClientCode" />
+                <ScalarProperty Name="BillToClientName" ColumnName="BillToClientName" />
+                <ScalarProperty Name="BillToContactPerson" ColumnName="BillToContactPerson" />
+                <ScalarProperty Name="PaymentDeliveryProcess" ColumnName="PaymentDeliveryProcess" />
+                <ScalarProperty Name="PaymentDeliveryNotes" ColumnName="PaymentDeliveryNotes" />
+                <ScalarProperty Name="ReportLocation" ColumnName="ReportLocation" />
+                <ScalarProperty Name="GenerateBillingAppointmentPerInvoice" ColumnName="GenerateBillingAppointmentPerInvoice" />
+                <ScalarProperty Name="InvoicePaid" ColumnName="InvoicePaid" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CeateBy" ColumnName="CeateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_S_BillingData">
+            <EntityTypeMapping TypeName="masterModel.TB_S_BillingData">
+              <MappingFragment StoreEntitySet="TB_S_BillingData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="Workorder" ColumnName="Workorder" />
+                <ScalarProperty Name="Site" ColumnName="Site" />
+                <ScalarProperty Name="NAVAccountNumber" ColumnName="NAVAccountNumber" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="PurchaseOrder" ColumnName="PurchaseOrder" />
+                <ScalarProperty Name="ReportToContact" ColumnName="ReportToContact" />
+                <ScalarProperty Name="ReportToOffice" ColumnName="ReportToOffice" />
+                <ScalarProperty Name="ReportToClient" ColumnName="ReportToClient" />
+                <ScalarProperty Name="InvoiceContact" ColumnName="InvoiceContact" />
+                <ScalarProperty Name="Laboratory" ColumnName="Laboratory" />
+                <ScalarProperty Name="ClientManager" ColumnName="ClientManager" />
+                <ScalarProperty Name="ActivityCode" ColumnName="ActivityCode" />
+                <ScalarProperty Name="AFENumber" ColumnName="AFENumber" />
+                <ScalarProperty Name="ApproverCode" ColumnName="ApproverCode" />
+                <ScalarProperty Name="ContractNumber" ColumnName="ContractNumber" />
+                <ScalarProperty Name="CostCenterClient" ColumnName="CostCenterClient" />
+                <ScalarProperty Name="GLAccount" ColumnName="GLAccount" />
+                <ScalarProperty Name="LegalSiteDescriptionLSD" ColumnName="LegalSiteDescriptionLSD" />
+                <ScalarProperty Name="ProjectManagerClientSide" ColumnName="ProjectManagerClientSide" />
+                <ScalarProperty Name="InvoiceFile" ColumnName="InvoiceFile" />
+                <ScalarProperty Name="CoCFile" ColumnName="CoCFile" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_S_CONFIG">
+            <EntityTypeMapping TypeName="masterModel.TB_S_CONFIG">
+              <MappingFragment StoreEntitySet="TB_S_CONFIG">
+                <ScalarProperty Name="Config_ID" ColumnName="Config_ID" />
+                <ScalarProperty Name="Config_Name" ColumnName="Config_Name" />
+                <ScalarProperty Name="Config_Value" ColumnName="Config_Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_S_InvoiceHeader">
+            <EntityTypeMapping TypeName="masterModel.TB_S_InvoiceHeader">
+              <MappingFragment StoreEntitySet="TB_S_InvoiceHeader">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="ClientCode" ColumnName="ClientCode" />
+                <ScalarProperty Name="InvoiceIssuedDate" ColumnName="InvoiceIssuedDate" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="QuoteCode" ColumnName="QuoteCode" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AggregatedCounters">
+            <EntityTypeMapping TypeName="masterModel.AggregatedCounter">
+              <MappingFragment StoreEntitySet="AggregatedCounter">
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hashes">
+            <EntityTypeMapping TypeName="masterModel.Hash">
+              <MappingFragment StoreEntitySet="Hash">
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Field" ColumnName="Field" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="masterModel.Job">
+              <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="InvocationData" ColumnName="InvocationData" />
+                <ScalarProperty Name="Arguments" ColumnName="Arguments" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobParameters">
+            <EntityTypeMapping TypeName="masterModel.JobParameter">
+              <MappingFragment StoreEntitySet="JobParameter">
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobQueues">
+            <EntityTypeMapping TypeName="masterModel.JobQueue">
+              <MappingFragment StoreEntitySet="JobQueue">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="Queue" ColumnName="Queue" />
+                <ScalarProperty Name="FetchedAt" ColumnName="FetchedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lists">
+            <EntityTypeMapping TypeName="masterModel.List">
+              <MappingFragment StoreEntitySet="List">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schemata">
+            <EntityTypeMapping TypeName="masterModel.Schema">
+              <MappingFragment StoreEntitySet="Schema">
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servers">
+            <EntityTypeMapping TypeName="masterModel.Server">
+              <MappingFragment StoreEntitySet="Server">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="LastHeartbeat" ColumnName="LastHeartbeat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sets">
+            <EntityTypeMapping TypeName="masterModel.Set">
+              <MappingFragment StoreEntitySet="Set">
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="masterModel.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Reason" ColumnName="Reason" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MSreplication_options">
+            <EntityTypeMapping TypeName="masterModel.MSreplication_options">
+              <MappingFragment StoreEntitySet="MSreplication_options">
+                <ScalarProperty Name="optname" ColumnName="optname" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="major_version" ColumnName="major_version" />
+                <ScalarProperty Name="minor_version" ColumnName="minor_version" />
+                <ScalarProperty Name="revision" ColumnName="revision" />
+                <ScalarProperty Name="install_failures" ColumnName="install_failures" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_fallback_db">
+            <EntityTypeMapping TypeName="masterModel.spt_fallback_db">
+              <MappingFragment StoreEntitySet="spt_fallback_db">
+                <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+                <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+                <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+                <ScalarProperty Name="xfallback_dbid" ColumnName="xfallback_dbid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="dbid" ColumnName="dbid" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="version" ColumnName="version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_fallback_dev">
+            <EntityTypeMapping TypeName="masterModel.spt_fallback_dev">
+              <MappingFragment StoreEntitySet="spt_fallback_dev">
+                <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+                <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+                <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+                <ScalarProperty Name="xfallback_low" ColumnName="xfallback_low" />
+                <ScalarProperty Name="xfallback_drive" ColumnName="xfallback_drive" />
+                <ScalarProperty Name="low" ColumnName="low" />
+                <ScalarProperty Name="high" ColumnName="high" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phyname" ColumnName="phyname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_fallback_usg">
+            <EntityTypeMapping TypeName="masterModel.spt_fallback_usg">
+              <MappingFragment StoreEntitySet="spt_fallback_usg">
+                <ScalarProperty Name="xserver_name" ColumnName="xserver_name" />
+                <ScalarProperty Name="xdttm_ins" ColumnName="xdttm_ins" />
+                <ScalarProperty Name="xdttm_last_ins_upd" ColumnName="xdttm_last_ins_upd" />
+                <ScalarProperty Name="xfallback_vstart" ColumnName="xfallback_vstart" />
+                <ScalarProperty Name="dbid" ColumnName="dbid" />
+                <ScalarProperty Name="segmap" ColumnName="segmap" />
+                <ScalarProperty Name="lstart" ColumnName="lstart" />
+                <ScalarProperty Name="sizepg" ColumnName="sizepg" />
+                <ScalarProperty Name="vstart" ColumnName="vstart" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_monitor">
+            <EntityTypeMapping TypeName="masterModel.spt_monitor">
+              <MappingFragment StoreEntitySet="spt_monitor">
+                <ScalarProperty Name="lastrun" ColumnName="lastrun" />
+                <ScalarProperty Name="cpu_busy" ColumnName="cpu_busy" />
+                <ScalarProperty Name="io_busy" ColumnName="io_busy" />
+                <ScalarProperty Name="idle" ColumnName="idle" />
+                <ScalarProperty Name="pack_received" ColumnName="pack_received" />
+                <ScalarProperty Name="pack_sent" ColumnName="pack_sent" />
+                <ScalarProperty Name="connections" ColumnName="connections" />
+                <ScalarProperty Name="pack_errors" ColumnName="pack_errors" />
+                <ScalarProperty Name="total_read" ColumnName="total_read" />
+                <ScalarProperty Name="total_write" ColumnName="total_write" />
+                <ScalarProperty Name="total_errors" ColumnName="total_errors" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Counters">
+            <EntityTypeMapping TypeName="masterModel.Counter">
+              <MappingFragment StoreEntitySet="Counter">
+                <ScalarProperty Name="Key" ColumnName="Key" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ExpireAt" ColumnName="ExpireAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="spt_values">
+            <EntityTypeMapping TypeName="masterModel.spt_values">
+              <MappingFragment StoreEntitySet="spt_values">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="low" ColumnName="low" />
+                <ScalarProperty Name="high" ColumnName="high" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vBillingAppointments">
+            <EntityTypeMapping TypeName="masterModel.vBillingAppointment">
+              <MappingFragment StoreEntitySet="vBillingAppointment">
+                <ScalarProperty Name="Package_ID" ColumnName="Package_ID" />
+                <ScalarProperty Name="BA_ID" ColumnName="BA_ID" />
+                <ScalarProperty Name="BA_No" ColumnName="BA_No" />
+                <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
+                <ScalarProperty Name="Invoice_No" ColumnName="Invoice_No" />
+                <ScalarProperty Name="Invoice_Cust_Code" ColumnName="Invoice_Cust_Code" />
+                <ScalarProperty Name="Quote_No" ColumnName="Quote_No" />
+                <ScalarProperty Name="Bill_To_Company" ColumnName="Bill_To_Company" />
+                <ScalarProperty Name="Invoice_To_Address" ColumnName="Invoice_To_Address" />
+                <ScalarProperty Name="Reports_To_Address" ColumnName="Reports_To_Address" />
+                <ScalarProperty Name="DiffAddress" ColumnName="DiffAddress" />
+                <ScalarProperty Name="Invoice_Note" ColumnName="Invoice_Note" />
+                <ScalarProperty Name="Delivery_Type" ColumnName="Delivery_Type" />
+                <ScalarProperty Name="Delivery_Name" ColumnName="Delivery_Name" />
+                <ScalarProperty Name="Status_Code" ColumnName="Status_Code" />
+                <ScalarProperty Name="STATUS_NAME" ColumnName="STATUS_NAME" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vCB_BillingAppointment">
+            <EntityTypeMapping TypeName="masterModel.vCB_BillingAppointment">
+              <MappingFragment StoreEntitySet="vCB_BillingAppointment">
+                <ScalarProperty Name="CB_Package_ID" ColumnName="CB_Package_ID" />
+                <ScalarProperty Name="CB_ID" ColumnName="CB_ID" />
+                <ScalarProperty Name="CB_No" ColumnName="CB_No" />
+                <ScalarProperty Name="CB_Invoice_ID" ColumnName="CB_Invoice_ID" />
+                <ScalarProperty Name="CB_Invoice_No" ColumnName="CB_Invoice_No" />
+                <ScalarProperty Name="CB_Invoice_Cust_Code" ColumnName="CB_Invoice_Cust_Code" />
+                <ScalarProperty Name="CB_Quote_No" ColumnName="CB_Quote_No" />
+                <ScalarProperty Name="CB_Bill_To_Company" ColumnName="CB_Bill_To_Company" />
+                <ScalarProperty Name="CB_Invoice_To_Address" ColumnName="CB_Invoice_To_Address" />
+                <ScalarProperty Name="CB_Reports_To_Address" ColumnName="CB_Reports_To_Address" />
+                <ScalarProperty Name="DiffAddress" ColumnName="DiffAddress" />
+                <ScalarProperty Name="CB_Invoice_Note" ColumnName="CB_Invoice_Note" />
+                <ScalarProperty Name="CB_Delivery_Type" ColumnName="CB_Delivery_Type" />
+                <ScalarProperty Name="Delivery_Name" ColumnName="Delivery_Name" />
+                <ScalarProperty Name="CB_Status_Code" ColumnName="CB_Status_Code" />
+                <ScalarProperty Name="STATUS_NAME" ColumnName="STATUS_NAME" />
+                <ScalarProperty Name="CB_CreateBy" ColumnName="CB_CreateBy" />
+                <ScalarProperty Name="CB_CreateDate" ColumnName="CB_CreateDate" />
+                <ScalarProperty Name="CB_UpdateBy" ColumnName="CB_UpdateBy" />
+                <ScalarProperty Name="CB_UpdateDate" ColumnName="CB_UpdateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vCB_PackageList">
+            <EntityTypeMapping TypeName="masterModel.vCB_PackageList">
+              <MappingFragment StoreEntitySet="vCB_PackageList">
+                <ScalarProperty Name="CB_Package_ID" ColumnName="CB_Package_ID" />
+                <ScalarProperty Name="CB_Package_No" ColumnName="CB_Package_No" />
+                <ScalarProperty Name="CB_Package_Name" ColumnName="CB_Package_Name" />
+                <ScalarProperty Name="CB_Package_Delivery_Date" ColumnName="CB_Package_Delivery_Date" />
+                <ScalarProperty Name="CB_Logistics_Delivery_Date" ColumnName="CB_Logistics_Delivery_Date" />
+                <ScalarProperty Name="CB_Status_Code" ColumnName="CB_Status_Code" />
+                <ScalarProperty Name="STATUS_NAME" ColumnName="STATUS_NAME" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPackages">
+            <EntityTypeMapping TypeName="masterModel.vPackage">
+              <MappingFragment StoreEntitySet="vPackage">
+                <ScalarProperty Name="Package_ID" ColumnName="Package_ID" />
+                <ScalarProperty Name="BA_ID" ColumnName="BA_ID" />
+                <ScalarProperty Name="Invoice_ID" ColumnName="Invoice_ID" />
+                <ScalarProperty Name="Package_No" ColumnName="Package_No" />
+                <ScalarProperty Name="Package_Name" ColumnName="Package_Name" />
+                <ScalarProperty Name="BA_No" ColumnName="BA_No" />
+                <ScalarProperty Name="Invoice_No" ColumnName="Invoice_No" />
+                <ScalarProperty Name="Quote_No" ColumnName="Quote_No" />
+                <ScalarProperty Name="Cust_Code" ColumnName="Cust_Code" />
+                <ScalarProperty Name="Bill_To_Company" ColumnName="Bill_To_Company" />
+                <ScalarProperty Name="Delivery_To_Person" ColumnName="Delivery_To_Person" />
+                <ScalarProperty Name="Delivery_To_Tel" ColumnName="Delivery_To_Tel" />
+                <ScalarProperty Name="Delivery_Address" ColumnName="Delivery_Address" />
+                <ScalarProperty Name="Report_To_Comany" ColumnName="Report_To_Comany" />
+                <ScalarProperty Name="Reports_To_Tel" ColumnName="Reports_To_Tel" />
+                <ScalarProperty Name="Reports_To_Address" ColumnName="Reports_To_Address" />
+                <ScalarProperty Name="Invoice_Note" ColumnName="Invoice_Note" />
+                <ScalarProperty Name="DiffAddress" ColumnName="DiffAddress" />
+                <ScalarProperty Name="Invoice_Issue_Date" ColumnName="Invoice_Issue_Date" />
+                <ScalarProperty Name="Invoice_Date_Override" ColumnName="Invoice_Date_Override" />
+                <ScalarProperty Name="Total_Invoice_Amount_Inc_Vat" ColumnName="Total_Invoice_Amount_Inc_Vat" />
+                <ScalarProperty Name="CreditTerm" ColumnName="CreditTerm" />
+                <ScalarProperty Name="Delivery_Type" ColumnName="Delivery_Type" />
+                <ScalarProperty Name="Status_Name" ColumnName="Status_Name" />
+                <ScalarProperty Name="Package_Delivery_Date" ColumnName="Package_Delivery_Date" />
+                <ScalarProperty Name="Logistics_Delivery_Date" ColumnName="Logistics_Delivery_Date" />
+                <ScalarProperty Name="Status_Code" ColumnName="Status_Code" />
+                <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+                <ScalarProperty Name="pack_CreateBy" ColumnName="pack_CreateBy" />
+                <ScalarProperty Name="pack_CreateDate" ColumnName="pack_CreateDate" />
+                <ScalarProperty Name="BA_CreateBy" ColumnName="BA_CreateBy" />
+                <ScalarProperty Name="BA_CreateDate" ColumnName="BA_CreateDate" />
+                <ScalarProperty Name="inv_CreateBy" ColumnName="inv_CreateBy" />
+                <ScalarProperty Name="inv_CreateDate" ColumnName="inv_CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vPackageLists">
+            <EntityTypeMapping TypeName="masterModel.vPackageList">
+              <MappingFragment StoreEntitySet="vPackageList">
+                <ScalarProperty Name="Package_ID" ColumnName="Package_ID" />
+                <ScalarProperty Name="Package_No" ColumnName="Package_No" />
+                <ScalarProperty Name="Package_Name" ColumnName="Package_Name" />
+                <ScalarProperty Name="Package_Delivery_Date" ColumnName="Package_Delivery_Date" />
+                <ScalarProperty Name="Logistics_Delivery_Date" ColumnName="Logistics_Delivery_Date" />
+                <ScalarProperty Name="Status_Code" ColumnName="Status_Code" />
+                <ScalarProperty Name="STATUS_NAME" ColumnName="STATUS_NAME" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_MScleanupmergepublisher" FunctionName="masterModel.Store.sp_MScleanupmergepublisher" />
+          <FunctionImportMapping FunctionImportName="sp_MSrepl_startup" FunctionName="masterModel.Store.sp_MSrepl_startup" />
+          <FunctionImportMapping FunctionImportName="usp_AdhocListInvoiceByInvoiceAddress" FunctionName="masterModel.Store.usp_AdhocListInvoiceByInvoiceAddress" />
+          <FunctionImportMapping FunctionImportName="usp_CriteriaSearchBillingAppointment" FunctionName="masterModel.Store.usp_CriteriaSearchBillingAppointment" />
+          <FunctionImportMapping FunctionImportName="usp_GetNewRunningNo" FunctionName="masterModel.Store.usp_GetNewRunningNo" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
