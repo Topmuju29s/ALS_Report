@@ -1,0 +1,9 @@
+ALS Report/Access_data/bin/Debug/System.Threading.Tasks.Extensions.dll
+*.dll
+*.msl
+*.cache
+*.pdb
+ALS Report/ALS/bin/
+ALS Report/ALS/obj/Debug/
+ALS Report/Access_data/obj/
+ALS Report/Access_data/bin/Debug/
